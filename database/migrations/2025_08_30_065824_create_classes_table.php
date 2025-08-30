@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('password');
-            $table->enum('role',['admin','teacher', 'student'])->default('student');
-            $table->string('api_token', 80)->nullable()->unique();
+            $table->string('class_name', 255);
+            $table->text('description')->nullable();
+            $table->unsignedBigInteger('teacher_id')->nullable();
             $table->timestamps();
+            
+            $table->foreign('teacher_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('set null');
         });
-
     }
 
     /**
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('classes');
     }
 };
