@@ -1,0 +1,81 @@
+# -----------------------------------
+# Laravel / PHP
+# -----------------------------------
+/vendor/
+/bootstrap/cache/
+
+# Storage (runtime files, logs, views, cache, sessions)
+/storage/*.key
+/storage/app/public
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/views
+/storage/logs
+/storage/pail
+
+# Environment files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# -----------------------------------
+# Node / Frontend
+# -----------------------------------
+/node_modules/
+/public/build
+/public/hot
+/public/storage
+/public/mix-manifest.json
+
+# -----------------------------------
+# Logs & Cache
+# -----------------------------------
+*.log
+.phpunit.result.cache
+/.phpunit.cache
+/.phpunit.result.cache
+
+# Coverage reports
+coverage/*
+/phpunit.xml
+
+# Composer & npm debug logs
+composer.lock
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# -----------------------------------
+# Laravel Extras
+# -----------------------------------
+# Telescope (debug tool)
+/.telescope/
+/telescope/entries/*
+
+# Horizon (queue manager)
+/.horizon/
+/horizon/entries/*
+
+# Nova (if installed)
+/.nova
+
+# -----------------------------------
+# IDE & Editors
+# -----------------------------------
+.idea
+.vscode
+.fleet
+.zed
+.phpactor.json
+.phpstorm.meta.php
+
+# -----------------------------------
+# OS / Misc
+# -----------------------------------
+.DS_Store
+Thumbs.db
+Homestead.json
+Homestead.yaml
+auth.json
+.pnp
+.pnp.js
